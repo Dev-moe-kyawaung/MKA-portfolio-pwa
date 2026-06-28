@@ -1,5 +1,5 @@
 // Service Worker for PWA Install Support
-const CACHE_NAME = 'moe-portfolio-v1';
+const CACHE_NAME = 'MKA-portfolio-pwa';
 const URLS_TO_CACHE = [
   '/',
   '/index.html',
