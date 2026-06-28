@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - Moe Kyaw Aung Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #0d1117 0%, #1a0033 100%);
+            color: #c9d1d9;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .offline-container {
+            text-align: center;
+            max-width: 500px;
+            padding: 3rem;
+            background: rgba(22, 27, 34, 0.8);
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .offline-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #58a6ff;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #8b949e;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .offline-tips {
+            background: rgba(88, 166, 255, 0.1);
+            border-left: 3px solid #58a6ff;
+            padding: 1rem;
+            text-align: left;
+            border-radius: 4px;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .offline-tips h3 {
+            color: #58a6ff;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .offline-tips ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .offline-tips li {
+            padding: 0.25rem 0;
+            color: #8b949e;
+        }
+
+        .offline-tips li::before {
+            content: "✓ ";
+            color: #3fb950;
+            margin-right: 0.5rem;
+        }
+
+        .offline-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #58a6ff;
+            color: #0d1117;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #58a6ff;
+            border: 2px solid #58a6ff;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(88, 166, 255, 0.1);
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: #f85149;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 49%, 100% { opacity: 1; }
+            50%, 99% { opacity: 0.7; }
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #30363d;
+            font-size: 0.9rem;
+            color: #6e7681;
+        }
+
+        .contact-info a {
+            color: #58a6ff;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: #79c0ff;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 480px) {
+            .offline-container {
+                padding: 2rem 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .offline-icon {
+                font-size: 3rem;
+            }
+
+            .offline-actions {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="offline-icon">📴</div>
+        
+        <div class="status-badge">No Internet Connection</div>
+        
+        <h1>You're Offline</h1>
+        
+        <p>
+            It looks like you've lost your internet connection. 
+            The good news is that you can still access cached content!
+        </p>
+
+        <div class="offline-tips">
+            <h3>What You Can Do:</h3>
+            <ul>
+                <li>View previously visited pages</li>
+                <li>Read project information</li>
+                <li>Check contact details</li>
+                <li>Browse cached images</li>
+            </ul>
+        </div>
+
+        <p>
+            <strong>To fully access the portfolio:</strong><br>
+            Please reconnect to the internet and try again.
+        </p>
+
+        <div class="offline-actions">
+            <button class="btn btn-primary" onclick="location.reload()">
+                🔄 Retry Connection
+            </button>
+            <button class="btn btn-secondary" onclick="history.back()">
+                ← Go Back
+            </button>
+        </div>
+
+        <div class="contact-info">
+            <p>
+                If you're having trouble, you can still reach me:<br><br>
+                📧 <a href="mailto:moekyawaung@programmer.net">moekyawaung@programmer.net</a><br>
+                📱 <a href="tel:+959889000889">+95 9 889 000 889</a><br>
+                💼 <a href="https://linkedin.com/in/moe-kyaw-aung-2653093a1">LinkedIn Profile</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Check for internet connection
+        function checkConnection() {
+            if (navigator.onLine) {
+                console.log('Connection restored, reloading...');
+                location.reload();
+            }
+        }
+
+        // Listen for connection changes
+        window.addEventListener('online', checkConnection);
+        window.addEventListener('offline', () => {
+            console.log('Connection lost');
+        });
+
+        // Check periodically
+        setInterval(() => {
+            if (navigator.onLine) {
+                checkConnection();
+            }
+        }, 5000);
+    </script>
+</body>
+</html>
+
